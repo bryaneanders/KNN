@@ -1,0 +1,48 @@
+1) Program Usage
+
+The directory this file resides in is the top level directory for an eclipse project  
+if you wish to run it that way.
+
+The program takes two arguments:
+1) The gene relation data file
+2) The gene relation test file
+
+As I have it set in my eclipse the arguments are:
+.//hw2_files//Genes_relation.data .//hw2_files//Genes_relation.test
+
+
+Otherwise the command line usage should be:
+java KNNText genes_relation.text genes__relation.test
+
+
+2)  Classifier Method
+
+I used a simple but slightly modified version of KNN to classify my data. 
+When the GeneID's of the test element matches the GeneID of a gene
+in the training set I simply classify the localization of the test element
+as being the same as the training set element's.
+
+Otherwise I weight the Essential, Class, Complex, Phenotype, Motif
+and Chromosome Number columns equally and reduce the distance
+between the test element and the training set element by equal amounts
+for each of them.
+
+I classify the test element using the 10 nearest neighbours.
+
+
+3) Handling Missing Data
+
+I calculated the mode of the existing data elements for all elements
+except GeneID, Function and Localization because they had no missing values.
+
+4) Solution Accuracy
+
+Total rows tested: 1929
+Correctly labelled localizations: 715
+Percentage labelled correctly: 0.37065837221358217
+
+5) Extra Credit 
+
+See the banders_hw2_extra_credit.pdf for a description of what I did in Rapid Miner
+
+A dataset is included in RapidMiner Results Data.csv
